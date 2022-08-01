@@ -1,6 +1,6 @@
 import UserSearch from "./UserSearch";
 
-const Header = () => {
+const UserSearchData = () => {
   return (
     <header>
       <h1>GitHub User Search</h1>
@@ -8,4 +8,4 @@ const Header = () => {
     </header>
   );
 };
-export default Header;
+export default UserSearchData;

@@ -1,7 +1,7 @@
-import Header from "../../components/UserSearchData";
+import UserSearchData from "../../components/UserSearchData";
 
 const Home = () => {
-  return <Header />;
+  return <UserSearchData />;
 };
 
 export default Home;
