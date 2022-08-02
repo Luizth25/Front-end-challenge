@@ -1,11 +1,12 @@
+import { UserHeader, UserTittle } from "./style";
 import UserSearch from "./UserSearch";
 
 const UserSearchData = () => {
   return (
-    <header>
-      <h1>GitHub User Search</h1>
+    <UserHeader>
+      <UserTittle>GitHub User Search</UserTittle>
       <UserSearch />
-    </header>
+    </UserHeader>
   );
 };
 export default UserSearchData;
