@@ -1,10 +1,5 @@
 import styled, { css } from "styled-components";
 
-export const UserContainer = styled.div`
-  display: flex;
-  width: 1000px;
-  flex-direction: column;
-`;
 export const UserAvatar = styled.img`
   width: 150px;
   height: 150px;
@@ -20,4 +15,11 @@ export const UserData = styled.p`
 
 export const Username = styled.h3`
   font-size: 20px;
+`;
+
+export const UserRepo = styled.h1`
+  ${({ theme }) => css`
+    ${theme.fontStyles.heading}
+    padding:5px
+  `}
 `;

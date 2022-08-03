@@ -1,7 +1,5 @@
 import UserSearchData from "../../components/UserSearchData";
 
-const Home = () => {
-  return <UserSearchData />;
-};
+const Home = () => <UserSearchData />;
 
 export default Home;

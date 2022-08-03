@@ -1,10 +1,11 @@
+import UserContainer from "./style";
 import UserInfo from "./UserData";
 
 const UserSearch = () => {
   return (
-    <main>
+    <UserContainer>
       <UserInfo />
-    </main>
+    </UserContainer>
   );
 };
 export default UserSearch;
