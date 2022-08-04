@@ -27,6 +27,10 @@ const themeFontStyles = {
     fontSize: 32,
     fontWeight: 600,
   },
+  title: {
+    fontSize: 48,
+    fontWeight: 700,
+  },
 };
 const theme: DefaultTheme = {
   colors: themeColors,

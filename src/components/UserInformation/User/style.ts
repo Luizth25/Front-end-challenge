@@ -14,12 +14,8 @@ export const UserData = styled.p`
 `;
 
 export const Username = styled.h3`
-  font-size: 20px;
-`;
-
-export const UserRepo = styled.h1`
   ${({ theme }) => css`
     ${theme.fontStyles.heading}
-    padding:5px
+    font-size: 20px;
   `}
 `;

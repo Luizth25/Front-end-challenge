@@ -4,7 +4,7 @@ import UserSearch from "./UserSearch";
 const UserSearchData = () => {
   return (
     <UserHeader>
-      <UserTittle>GitHub User Search</UserTittle>
+      <UserTittle>GitHub User</UserTittle>
       <UserSearch />
     </UserHeader>
   );
