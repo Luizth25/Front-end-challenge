@@ -1,16 +1,8 @@
-import { useEffect, useState } from "react";
-
 import * as s from "./style";
-import { UserApi } from "../../../services/api";
-import { TUserProps } from "./types";
+import { useFetch } from "../../../hooks/user";
 
 export const User = () => {
-  const [user, setUser] = useState<TUserProps>();
-  useEffect(() => {
-    UserApi.get("/users/Luizth25")
-      .then((response) => setUser(response.data))
-      .catch((err) => err);
-  }, []);
+  const { user } = useFetch("/users/Luizth25");
 
   return (
     <>

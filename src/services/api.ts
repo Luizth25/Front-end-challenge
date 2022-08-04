@@ -7,3 +7,7 @@ export const UserApi = axios.create({
 export const ReposApi = axios.create({
   baseURL: "https://api.github.com/users",
 });
+
+export const CommitsApi = axios.create({
+  baseURL: "https://api.github.com/repos",
+});

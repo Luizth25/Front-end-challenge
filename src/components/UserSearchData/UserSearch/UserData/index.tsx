@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import * as s from "../../../UserInformation/User/style";
@@ -6,10 +7,8 @@ import { TUserProps, TRepoProps } from "./types";
 
 const UserInfo = () => {
   const [userSearch, setUserSearch] = useState("");
-
   const [user, setUser] = useState<TUserProps>();
-
-  const [repos, setRepos] = useState<[TRepoProps]>();
+  const [repos, setRepos] = useState<TRepoProps[]>([]);
 
   const getUser = () => {
     ReposApi.get(`/${userSearch}/repos`).then((response) =>
@@ -19,7 +18,6 @@ const UserInfo = () => {
       .then((response) => setUser(response.data))
       .catch((err) => err);
   };
-
   return (
     <>
       <input
@@ -28,18 +26,18 @@ const UserInfo = () => {
         onChange={(event) => setUserSearch(event.target.value)}
       />
       <button onClick={getUser}>Search</button>
-
       {user ? (
         <>
           <s.UserAvatar src={user?.avatar_url} alt="profilePicture" />
           <s.Username>Name: {user?.name}</s.Username>
           <s.UserData>Login: {user?.login}</s.UserData>
           <s.UserData>Followers: {user?.followers}</s.UserData>
-
           <ul>
             {repos?.map((repo) => (
               <li key={repo.id}>
-                <p>{repo.name}</p>
+                <Link to={`${user.login}/${repo.name}/commits`}>
+                  <p>{repo.name}</p>
+                </Link>
               </li>
             ))}
           </ul>

@@ -1,16 +1,9 @@
-import { useEffect, useState } from "react";
-
-import { ReposApi } from "../../../services/api";
-import { TRepoProps } from "./types";
 import * as s from "../User/style";
+import { Link } from "react-router-dom";
+import { useFetch } from "../../../hooks/repos";
 
 export const Repos = () => {
-  const [repos, setRepos] = useState<[TRepoProps]>();
-  useEffect(() => {
-    ReposApi.get("/luizth25/repos")
-      .then((response) => setRepos(response.data))
-      .catch((err) => err);
-  }, []);
+  const { repos } = useFetch("/luizth25/repos");
 
   return (
     <>
@@ -18,7 +11,9 @@ export const Repos = () => {
         <s.Username>Repositories</s.Username>
         {repos?.map((repo) => (
           <li key={repo.id}>
-            <p>{repo.name}</p>
+            <Link to={`luizth25/${repo.name}/commits`}>
+              <p>{repo?.name}</p>
+            </Link>
           </li>
         ))}
       </ul>
