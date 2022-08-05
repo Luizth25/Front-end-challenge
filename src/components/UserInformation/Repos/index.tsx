@@ -1,13 +1,13 @@
 import * as s from "../User/style";
 import { Link } from "react-router-dom";
-import { useFetch } from "../../../hooks/repos";
+import { useFetch } from "../../../hooks/Repos/repos";
 
 export const Repos = () => {
   const { repos } = useFetch("/luizth25/repos");
 
   return (
     <>
-      <ul>
+      <ol>
         <s.Username>Repositories</s.Username>
         {repos?.map((repo) => (
           <li key={repo.id}>
@@ -16,7 +16,7 @@ export const Repos = () => {
             </Link>
           </li>
         ))}
-      </ul>
+      </ol>
     </>
   );
 };

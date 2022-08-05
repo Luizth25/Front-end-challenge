@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { TUserProps } from "../components/UserInformation/User/types";
-import { UserApi } from "../services/api";
+import { TUserProps } from "../../components/UserInformation/User/types";
+import { UserApi } from "../../services/api";
 
 export function useFetch<T = TUserProps>(url: string) {
   const [user, setUser] = useState<T>();

@@ -1,5 +1,5 @@
 import * as s from "./style";
-import { useFetch } from "../../../hooks/user";
+import { useFetch } from "../../../hooks/User/user";
 
 export const User = () => {
   const { user } = useFetch("/users/Luizth25");

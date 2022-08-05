@@ -32,15 +32,15 @@ const UserInfo = () => {
           <s.Username>Name: {user?.name}</s.Username>
           <s.UserData>Login: {user?.login}</s.UserData>
           <s.UserData>Followers: {user?.followers}</s.UserData>
-          <ul>
+          <ol>
             {repos?.map((repo) => (
               <li key={repo.id}>
-                <Link to={`${user.login}/${repo.name}/commits`}>
+                <Link to={`/usersearch/${user.login}/${repo.name}/commits`}>
                   <p>{repo.name}</p>
                 </Link>
               </li>
             ))}
-          </ul>
+          </ol>
         </>
       ) : undefined}
     </>

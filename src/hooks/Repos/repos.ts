@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { TRepoProps } from "../components/UserInformation/Repos/types";
-import { ReposApi } from "../services/api";
+import { TRepoProps } from "../../components/UserInformation/Repos/types";
+import { ReposApi } from "../../services/api";
 
 export function useFetch<T = TRepoProps>(url: string) {
   const [repos, setRepos] = useState<T[]>();

@@ -7,6 +7,5 @@ export const UserContainer = styled.main`
   flex-direction: column;
   margin-top: 20px;
   gap: 2px;
-  text-align: center;
 `;
 export default UserContainer;
