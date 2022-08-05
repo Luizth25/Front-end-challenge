@@ -4,6 +4,7 @@ import { useState } from "react";
 import * as s from "../../../UserInformation/User/style";
 import { ReposApi, UserApi } from "../../../../services/api";
 import { TUserProps, TRepoProps } from "./types";
+import { EventButton } from "../../../Button";
 
 const UserInfo = () => {
   const [userSearch, setUserSearch] = useState("");
@@ -25,7 +26,7 @@ const UserInfo = () => {
         value={userSearch}
         onChange={(event) => setUserSearch(event.target.value)}
       />
-      <button onClick={getUser}>Search</button>
+      <EventButton handleClick={getUser} name="Search" />
       {user ? (
         <>
           <s.UserAvatar src={user?.avatar_url} alt="profilePicture" />

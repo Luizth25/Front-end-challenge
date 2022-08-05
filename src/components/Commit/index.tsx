@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 import { useFetch } from "../../hooks/Commits/commits";
@@ -13,12 +12,6 @@ const CommitsInfo = () => {
 
   return (
     <CommitsContainer>
-      <Link to="/">
-        <button>Home</button>
-      </Link>
-      <Link to="/usersearch">
-        <button>Search new user</button>
-      </Link>
       <>{commit ? <Title>{param1}</Title> : undefined}</>
       <ol>
         {commit.slice(0, 10).map((commit) => (

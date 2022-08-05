@@ -15,7 +15,8 @@ declare module "styled-components" {
 const themeColors = {
   background: "#faf6ed",
   fontColor: "#222",
-  containerColor: "#FB5",
+  componentColor: "#FB5",
+  borderColor: " #000;",
 };
 
 const themeFontStyles = {

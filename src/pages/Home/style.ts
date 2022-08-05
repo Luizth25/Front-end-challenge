@@ -1,9 +1,8 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-const Title = styled.h1`
-  ${({ theme }) => css`
-    ${theme.fontStyles.title}
-    text-align:center;
-  `}
+export const NavBar = styled.nav`
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+  gap: 20px;
 `;
-export default Title;

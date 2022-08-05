@@ -1,19 +1,20 @@
 import UserInformation from "../../components/UserInformation";
-import Title from "./style";
+
 import UserContainer from "../../components/UserInformation/style";
 import { Link } from "react-router-dom";
+import { Button } from "../../components/Button";
+import { Header } from "../../components/Header";
+import { NavBar } from "./style";
 
 const Home = () => {
   return (
     <>
-      <header>
-        <Title>My profile</Title>
-      </header>
-      <nav>
+      <Header title="My profile" />
+      <NavBar>
         <Link to="/usersearch">
-          <button>Search new user</button>
+          <Button name="Search new user" />
         </Link>
-      </nav>
+      </NavBar>
       <UserContainer>
         <UserInformation />
       </UserContainer>
