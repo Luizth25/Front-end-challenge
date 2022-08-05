@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import { useFetch } from "../../hooks/Commits/commits";
-import { Title, CommitsContainer } from "./styled";
+import { Title, CommitsContainer, ListCommit, ListItem } from "./styled";
 
 const CommitsInfo = () => {
   const params = useParams();
@@ -12,14 +12,14 @@ const CommitsInfo = () => {
 
   return (
     <CommitsContainer>
-      <>{commit ? <Title>{param1}</Title> : undefined}</>
-      <ol>
+      {commit ? <Title>{param1}</Title> : undefined}
+      <ListCommit>
         {commit.slice(0, 10).map((commit) => (
-          <li key={commit?.id}>
+          <ListItem key={commit?.id}>
             <p>{commit?.commit.message}</p>
-          </li>
+          </ListItem>
         ))}
-      </ol>
+      </ListCommit>
     </CommitsContainer>
   );
 };

@@ -16,7 +16,7 @@ const themeColors = {
   background: "#faf6ed",
   fontColor: "#222",
   componentColor: "#FB5",
-  borderColor: " #000;",
+  borderColor: " #E54;",
 };
 
 const themeFontStyles = {
