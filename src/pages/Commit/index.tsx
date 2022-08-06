@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+
 import { Button } from "../../components/Button";
-import CommitsInfo from "../../components/Commit";
+import CommitsList from "../../components/CommitList";
 import { Header } from "../../components/Header";
 import { NavBar } from "../Home/style";
 
-const Commits = () => {
+const Commit = () => {
   return (
     <>
       <Header title="Commit List" />
@@ -12,13 +13,13 @@ const Commits = () => {
         <Link to="/">
           <Button name="Home" />
         </Link>
-        <Link to="/usersearch">
+        <Link to="/search">
           <Button name="Search new User" />
         </Link>
       </NavBar>
-      <CommitsInfo />
+      <CommitsList />
     </>
   );
 };
 
-export default Commits;
+export default Commit;

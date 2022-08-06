@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import * as s from "../../../UserInformation/User/style";
-import { ReposApi, UserApi } from "../../../../services/api";
+import { RepoData, UserDatas } from "../../BasicDatas";
+import { EventButton } from "../../Button";
+import { ReposApi, UserApi } from "../../../services/api";
+import * as s from "./style";
 import { TUserProps, TRepoProps } from "./types";
-import { EventButton } from "../../../Button";
 
-const UserInfo = () => {
+const UserData = () => {
   const [userSearch, setUserSearch] = useState("");
   const [user, setUser] = useState<TUserProps>();
   const [repos, setRepos] = useState<TRepoProps[]>([]);
@@ -15,13 +16,15 @@ const UserInfo = () => {
     ReposApi.get(`/${userSearch}/repos`).then((response) =>
       setRepos(response.data)
     );
+
     UserApi.get(`/users/${userSearch}`)
       .then((response) => setUser(response.data))
       .catch((err) => err);
   };
+
   return (
     <>
-      <input
+      <s.Input
         type="text"
         value={userSearch}
         onChange={(event) => setUserSearch(event.target.value)}
@@ -30,21 +33,24 @@ const UserInfo = () => {
       {user ? (
         <>
           <s.UserAvatar src={user?.avatar_url} alt="profilePicture" />
-          <s.Username>Name: {user?.name}</s.Username>
-          <s.UserData>Login: {user?.login}</s.UserData>
-          <s.UserData>Followers: {user?.followers}</s.UserData>
-          <ol>
+          <UserDatas
+            name={user?.name}
+            followers={user?.followers}
+            login={user?.login}
+          />
+          <s.ListUser>
             {repos?.map((repo) => (
               <li key={repo.id}>
-                <Link to={`/usersearch/${user.login}/${repo.name}/commits`}>
-                  <p>{repo.name}</p>
+                <Link to={`/${user.login}/${repo.name}/commits`}>
+                  <RepoData name={repo.name} />
                 </Link>
               </li>
             ))}
-          </ol>
+          </s.ListUser>
         </>
       ) : undefined}
     </>
   );
 };
-export default UserInfo;
+
+export default UserData;

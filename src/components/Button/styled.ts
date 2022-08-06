@@ -8,6 +8,7 @@ const SButton = styled.button`
     border-radius: 5px;
     cursor: pointer;
     padding: 10px;
+    margin-top: 5px;
   `}
   &:hover {
     ${({ theme }) => css`

@@ -1,15 +1,14 @@
 import { Route, Routes as RoutesRRD } from "react-router-dom";
 
-import Commits from "../pages/Commits";
+import Commits from "../pages/Commit";
 import Home from "../pages/Home";
-import UserSearch from "../pages/UserSearch";
+import Search from "../pages/Search";
 
 const Routes = () => {
   return (
     <RoutesRRD>
       <Route path="/" element={<Home />} />
-      <Route path="/usersearch" element={<UserSearch />} />
-      <Route path="/usersearch/:login/:name/commits" element={<Commits />} />
+      <Route path="/search" element={<Search />} />
       <Route path="/:login/:name/commits" element={<Commits />} />
     </RoutesRRD>
   );

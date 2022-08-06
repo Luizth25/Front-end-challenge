@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { TCommitsProps } from "../../components/Commit/types";
 import { CommitsApi } from "../../services/api";
+import { TCommitsProps } from "./types";
 
 export function useFetch<T = TCommitsProps>(url: string) {
   const [commit, setCommit] = useState<T[]>([]);

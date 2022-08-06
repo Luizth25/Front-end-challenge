@@ -1,12 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const UserAvatar = styled.img`
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-`;
-
-export const UserData = styled.p`
+export const Paragraph = styled.p`
   ${({ theme }) => css`
     ${theme.fontStyles.paragraph}
     padding:5px

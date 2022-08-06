@@ -3,8 +3,8 @@ import THeaderProps from "./type";
 
 export const Header = ({ title }: THeaderProps) => {
   return (
-    <s.SHeader>
+    <s.Headers>
       <s.Title>{title}</s.Title>
-    </s.SHeader>
+    </s.Headers>
   );
 };

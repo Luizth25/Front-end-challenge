@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { TRepoProps } from "../../components/UserInformation/Repos/types";
+import { TRepoProps } from "../../components/UserSearch/UserData/types";
 import { ReposApi } from "../../services/api";
 
 export function useFetch<T = TRepoProps>(url: string) {
