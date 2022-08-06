@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useFetch } from "../../../hooks/Commits";
@@ -5,17 +6,32 @@ import * as s from "../styled";
 
 const Commits = () => {
   const params = useParams();
-  const para2 = params["login"] as string;
-  const param1 = params["name"] as string;
 
-  const { commit } = useFetch(`/${para2}/${param1}/commits`);
+  const paramLogin = params["login"] as string;
+  const paramName = params["name"] as string;
+
+  const { commit } = useFetch(`/${paramLogin}/${paramName}/commits`);
+
+  const [commitF, setCommitF] = useState("");
+
+  const lowerCommit = commitF.toLowerCase();
+
+  const filterCommit = commit.filter((commit) =>
+    commit.commit.message.toLowerCase().includes(lowerCommit)
+  );
 
   return (
     <>
-      {commit ? <s.Title>{param1}</s.Title> : undefined}
+      <input
+        placeholder="filtered commit search"
+        type="text"
+        value={commitF}
+        onChange={(event) => setCommitF(event.target.value)}
+      />
+      {commit ? <s.Title>{paramName}</s.Title> : undefined}
 
-      {commit.slice(0, 10).map((commit) => (
-        <s.ListItem key={commit?.id}>
+      {filterCommit.slice(0, 10).map((commit) => (
+        <s.ListItem key={commit.commit.message}>
           <p>{commit?.commit.message}</p>
         </s.ListItem>
       ))}

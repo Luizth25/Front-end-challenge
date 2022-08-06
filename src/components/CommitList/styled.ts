@@ -23,7 +23,7 @@ export const ListCommit = styled.ol`
     display: flex;
     max-width: 600px;
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: 15px;
     list-style: decimal-leading-zero;
     border-radius: 5px;
   `}

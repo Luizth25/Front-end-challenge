@@ -19,17 +19,22 @@ const UserData = () => {
 
     UserApi.get(`/users/${userSearch}`)
       .then((response) => setUser(response.data))
-      .catch((err) => err);
+      .catch((err) => {
+        return window.location.reload(), alert("User not Found"), err;
+      });
   };
 
   return (
     <>
       <s.Input
         type="text"
+        placeholder="Search for new user"
         value={userSearch}
         onChange={(event) => setUserSearch(event.target.value)}
       />
+
       <EventButton handleClick={getUser} name="Search" />
+
       {user ? (
         <>
           <s.UserAvatar src={user?.avatar_url} alt="profilePicture" />
@@ -41,7 +46,7 @@ const UserData = () => {
           <s.ListUser>
             {repos?.map((repo) => (
               <li key={repo.id}>
-                <Link to={`/${user.login}/${repo.name}/commits`}>
+                <Link to={`/commits/${user.login}/${repo.name}`}>
                   <RepoData name={repo.name} />
                 </Link>
               </li>

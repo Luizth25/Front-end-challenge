@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-
-import { RepoData } from "../../BasicDatas";
-import { useFetch } from "../../../hooks/Repos";
+import { useFetch } from "../../../../hooks/Repos";
+import { RepoData } from "../../../BasicDatas";
 
 export const Repos = () => {
   const { repos } = useFetch("/luizth25/repos");
@@ -10,7 +9,7 @@ export const Repos = () => {
     <>
       {repos?.map((repo) => (
         <li key={repo.id}>
-          <Link to={`luizth25/${repo.name}/commits`}>
+          <Link to={`/commits/luizth25/${repo.name}`}>
             <RepoData key={repo.id} name={repo?.name} />
           </Link>
         </li>

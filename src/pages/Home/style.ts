@@ -12,3 +12,9 @@ export const UserContainer = styled.main`
   flex-direction: column;
   gap: 2px;
 `;
+
+export const UserAvatar = styled.img`
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+`;
