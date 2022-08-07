@@ -5,7 +5,7 @@ this project was started with yarn Create React App
 
 ## Project access
 
-you can access the project by clicking on this link ,downloading or cloning this repository on your computer.
+you can access the project by clicking on this link https://front-end-challenger.netlify.app/ ,downloading or cloning this repository on your computer.
 
 ## Open and run the project!
 
