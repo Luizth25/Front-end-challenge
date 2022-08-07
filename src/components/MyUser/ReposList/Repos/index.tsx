@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
-import { useFetch } from "../../../../hooks/Repos";
+
+import { useDistributor } from "../../../../hooks/Distributor";
 import { RepoData } from "../../../BasicDatas";
+import TRepoProps from "./types";
 
 export const Repos = () => {
-  const { repos } = useFetch("/luizth25/repos");
+  const { info: repos } = useDistributor<TRepoProps[]>("/users/luizth25/repos");
 
   return (
     <>
