@@ -9,7 +9,7 @@ const Routes = () => {
     <RoutesRRD>
       <Route path="/" element={<Home />} />
       <Route path="/search" element={<Search />} />
-      <Route path="/commits/:login/:name/" element={<Commits />} />
+      <Route path="/commits/:login/:repo/" element={<Commits />} />
     </RoutesRRD>
   );
 };

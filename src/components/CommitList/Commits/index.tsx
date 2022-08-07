@@ -8,9 +8,9 @@ const Commits = () => {
   const params = useParams();
 
   const paramLogin = params["login"] as string;
-  const paramName = params["name"] as string;
+  const paramRepo = params["repo"] as string;
 
-  const { commit } = useFetch(`/${paramLogin}/${paramName}/commits`);
+  const { commit } = useFetch(`/${paramLogin}/${paramRepo}/commits`);
 
   const [commitF, setCommitF] = useState("");
 
@@ -28,11 +28,11 @@ const Commits = () => {
         value={commitF}
         onChange={(event) => setCommitF(event.target.value)}
       />
-      {commit ? <s.Title>{paramName}</s.Title> : undefined}
+      {commit ? <s.Title>{paramRepo}</s.Title> : null}
 
       {filterCommit.slice(0, 10).map((commit) => (
         <s.ListItem key={commit.commit.message}>
-          <p>{commit?.commit.message}</p>
+          <s.Message>{commit?.commit.message}</s.Message>
         </s.ListItem>
       ))}
     </>

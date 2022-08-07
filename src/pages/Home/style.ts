@@ -5,6 +5,11 @@ export const NavBar = styled.nav`
   justify-content: flex-start;
   padding-left: 20px;
   gap: 20px;
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    gap: 15px;
+  }
 `;
 export const UserContainer = styled.main`
   display: flex;

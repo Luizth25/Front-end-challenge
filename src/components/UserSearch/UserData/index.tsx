@@ -20,6 +20,7 @@ const UserData = () => {
     UserApi.get(`/users/${userSearch}`)
       .then((response) => setUser(response.data))
       .catch((err) => {
+        // eslint-disable-next-line no-sequences
         return window.location.reload(), alert("User not Found"), err;
       });
   };
